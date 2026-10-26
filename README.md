@@ -22,8 +22,7 @@ The Developer Profile CLI performs two key tasks:
 📁 Project Structure
 
 Week-1-task-1-dev-profile/
-
-├── js-basics/              # JavaScript fundamentals practice exercises
+├── js-basics/                     # JavaScript fundamentals practice exercises
 │   ├── arrays.js
 │   ├── developer-card.js
 │   ├── dynamic-typing.js
@@ -35,13 +34,14 @@ Week-1-task-1-dev-profile/
 │   ├── primitives.js
 │   └── variables.js
 ├── src/
-│   └── index.ts            # Main application source code in TypeScript
-├── .env                    # Local environment variables (DO NOT COMMIT)
-├── .gitignore              # Files and folders excluded from Git version control
-├── package-lock.json       # Dependency tree lockfile
-├── package.json            # Project manifest and scripts
-├── README.md               # Project documentation
-└── tsconfig.json           # TypeScript compiler configuration
+│   └── index.ts                   # Main application source code in TypeScript
+├── .env                           # Local environment variables (DO NOT COMMIT)
+├── .gitignore                     # Files and folders excluded from Git version control
+├── package-lock.json              # Dependency tree lockfile
+├── package.json                   # Project manifest and scripts
+├── README.md                      # Project documentation
+└── tsconfig.json                  # TypeScript compiler configuration
+
 
 
 ⚙️ Prerequisites
