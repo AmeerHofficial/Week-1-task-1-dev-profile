@@ -2,7 +2,7 @@
 
 A lightweight command-line interface (CLI) application built with Node.js and TypeScript. This tool displays developer profile details and fetches real-time public account statistics directly from the GitHub REST API.
 
-📋 ##Table of Contents
+📋 Table of Contents
 
 * Project Overview
 * Project Structure
@@ -13,13 +13,13 @@ A lightweight command-line interface (CLI) application built with Node.js and Ty
 * API Reference
 * Error Handling
 
-🎯 ##Project Overview
+🎯 Project Overview
 
 The Developer Profile CLI performs two key tasks:
 1. Displays local developer profile information (Name, Training Week, Current Focus).
 2. Connects to GitHub's REST API to fetch real-time public statistics for a specified GitHub username (Username, Public Repositories, and Followers).
 
-📁 ##Project Structure
+📁 Project Structure
 
 ```text
 Week-1-task-1-dev-profile/
@@ -45,7 +45,7 @@ Week-1-task-1-dev-profile/
 ```
 
 
-⚙️ ##Prerequisites
+⚙️ Prerequisites
 
 Make sure you have the following installed on your machine:
 * Node.js (v20.x or higher recommended)
@@ -61,17 +61,15 @@ npm -v
 🚀 Setup & Installation
 
 1. Clone the Repository:
-[bash]
-
+```[bash]
 git clone https://github.com/ameerhofficial/Week-1-task-1-dev-profile.git
-
 cd Week-1-task-1-dev-profile
-
+```
 2. Install Dependencies:
 ```[bash]
 npm install
 ```
-🔑 ##Environment Variables
+🔑 Environment Variables
 
 The application reads the target GitHub username from an environment variable.
 1. Create a .env file in the root directory:
@@ -83,7 +81,7 @@ GITHUB_USERNAME=(yourusername)
 
 > ⚠️ Important: The .env file is listed inside .gitignore to prevent sensitive credentials and personal configurations from being committed to GitHub.
 
-🏃 ##Running the Application
+🏃 Running the Application
 
 Option 1: Running TypeScript Directly (Development)
 
@@ -109,14 +107,14 @@ Username ameerhofficial
 Public Repositories 12
 Followers 45
 ```
-🌐 ##API Reference
+🌐 API Reference
 
 The CLI queries the public GitHub REST API:
 * Endpoint: GET https://api.github.com/users/{username}
 * Authentication: None required for public profiles.
 * Response Format: JSON
 
-🛡️ ##Error Handling
+🛡️ Error Handling
 
 The application includes robust runtime checks:
 * Missing Environment Variable: If GITHUB_USERNAME is missing from .env, the app throws a clean, actionable error message instructing the user to configure .env.
