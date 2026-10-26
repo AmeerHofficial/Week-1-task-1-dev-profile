@@ -16,8 +16,16 @@ if (!profile) {
 }
 console.log("Fetching GitHub profile for:", profile , ".....");
 
+// Define a TypeScript interface for the GitHub user response shape
+interface GitHubUser {
+  login: string;
+  name?: string;
+  bio?: string;
+  public_repos: number;
+  followers: number;
+}
 //creating async function to fetch data from github api
-async function fetchGitHubProfile(username: string) {
+async function fetchGitHubProfile(username: string): Promise<void> {
     try {
     const url = `https://api.github.com/users/${username}`;
     
@@ -41,9 +49,16 @@ async function fetchGitHubProfile(username: string) {
     console.log("Public Repositories", data.public_repos);
     console.log("Followers", data.followers);
 
-  } catch (error: any) {
-    // Part 11: Handle errors gracefully if something goes wrong
-    console.error(`Error: ${error.message}`);
+  } catch (error: unknown) {
+    // Safely check the error type instead of using 'any'
+    if (error instanceof Error) {
+      console.error(`Error: ${error.message}`);
+    } else {
+      console.error("An unexpected error occurred:", error);
+    }
+    
+    // Ensure the process exits with a failure status code
+    process.exitCode = 1;
   }
 }
 
