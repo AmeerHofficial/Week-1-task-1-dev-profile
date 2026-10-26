@@ -13,3 +13,4 @@ function printDeveloper (developer) {
     console.log("Current Week: " + developer.trainingWeek);
     console.log("Current Focus: " + developer.currentFocus);
 }
+printDeveloper(userData.developer);

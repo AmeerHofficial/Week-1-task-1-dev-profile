@@ -5,3 +5,4 @@ tools.push("Copilot");
 console.log(typeof tools);
 console.log(Array.isArray(tools));
 console.log(tools);
+console.log(tools[7]);
