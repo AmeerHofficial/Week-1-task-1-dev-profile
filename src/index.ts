@@ -12,30 +12,25 @@ console.log("------------------------------------")
 
 const profile = process.env.GITHUB_USERNAME; 
 if (!profile) {
-    throw new Error("GITHUB_USERNAME is not set. Add it to .env and run Node with --env-file=.env.");
+  throw new Error("GITHUB_USERNAME is not set. Add it to .env and run Node with --env-file=.env.");
 }
 console.log("Fetching GitHub profile for:", profile , ".....");
 
 //creating async function to fetch data from github api
 async function fetchGitHubProfile(username: string) {
     try {
-        const url = `https://api.github.com/users/${username}`;
+    const url = `https://api.github.com/users/${username}`;
     
     // Make the HTTP request using the built-in fetch API
     const response = await fetch(url);
-    //
+    //Error Handling
     // Check for specific HTTP status codes
     if (response.status === 404) {
-      throw new Error("Error 404: GitHub user could not be found.");
+      throw new Error("404: GitHub user could not be found.");
     }
-    
-    if (!response.ok) {
-      throw new Error(`HTTP Error! Status: ${response.status}`);
-    }
-    //
     // Check if the response status is okay (status code 200)
     if (!response.ok) {
-      throw new Error(`GitHub user could not be found.`);
+      throw new Error(`HTTP Error! Status: ${response.status}`);
     }
 
     // Parse the response into JSON data
@@ -54,5 +49,3 @@ async function fetchGitHubProfile(username: string) {
 
 // Execute the function
 fetchGitHubProfile(profile);
-
-
